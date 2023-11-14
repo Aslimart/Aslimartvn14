@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aslimart Product</title>
+    <link rel="stylesheet" href="../../CSS files/style.css">
+    <link rel="stylesheet" href="main.js">
+    <!-- bootstrap link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- bootstrap link -->
+<!-- icons -->
+<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+<!-- icons -->
+
+<!-- font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+<!-- font -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {font-family: Arial, Helvetica, sans-serif;}
+       * {box-sizing: border-box;}
+       
+       /* Button used to open the contact form - fixed at the bottom of the page */
+        .contact-heading{
+          padding-bottom: 20px;
+        }
+        .tick{
+          margin-bottom: 20px;
+        }
+        .thank-you-popup{
+          display: none;
+          position: fixed;
+          bottom: 0;
+          border: 3px solid #f1f1f1;
+         z-index: 9;
+         top:50%;
+         left: 35.1%;
+         text-align: center;
+         height: 225px;
+         background-color: white;
+         padding: 20px; /* Increased padding for space inside the popup */
+         margin: -100px 0 0 -150px;
+        
+        }
+        
+        .thank-you-popup .btn {
+         background-color: #04AA6D;
+         color: rgb(252, 253, 253);
+         padding: 5px 10px;
+         border: none;
+         cursor: pointer;
+
+       }
+       .thank-you-popup p, h{
+        padding-bottom: 20px;
+       }
+       .open-button {
+         background-color: #555;
+         color: white;
+         padding: 166px 200px;
+         border: none;
+         cursor: pointer;
+         opacity: 0.8;
+         position: fixed;
+         bottom: 23px;
+         right: 28px;
+         width: 280px;
+       }
+       
+       /* The popup form - hidden by default */
+       .form-popup {
+         display: none;
+         position: fixed;
+         bottom: 10;
+         border: 3px solid #f1f1f1;
+         z-index: 9;
+         top:13%;
+         left: 25%;
+         height: 459px;
+         overflow: scroll
+         
+       }
+       
+       /* Add styles to the form container */
+       .form-container {
+         max-width: 600px;
+         padding: 10px;
+         background-color: white;
+       }
+       
+       /* Full-width input fields */
+       .form-container input[type=text], .form-container input[type=number] {
+         width: 100%;
+         padding: 15px;
+         margin: 5px 0 22px 0;
+         border: none;
+         background: #f1f1f1;
+       }
+       
+       /* When the inputs get focus, do something */
+       .form-container input[type=text]:focus, .form-container input[type=number]:focus {
+         background-color: #ddd;
+         outline:none;
+       }
+       
+       /* Set a style for the submit/login button */
+       .form-container .btn {
+         background-color: #04AA6D;
+         color: white;
+         padding: 16px 20px;
+         border: none;
+         cursor: pointer;
+         width: 100%;
+         margin-bottom:10px;
+         opacity: 0.8;
+       }
+       
+       /* Add a red background color to the cancel button */
+       .form-container .cancel {
+         background-color: rgba(245, 119, 9, 0.651);
+       }
+       
+       /* Add some hover effects to buttons */
+       .form-container .btn:hover, .open-button:hover {
+         opacity: 1;
+       }
+
+       /* Responsive styles for tablets and mobiles */
+  @media (max-width: 768px) {
+    .form-popup {
+      top: 10%; /* Adjust top position for better visibility on smaller screens */
+      left: 10%; /* Adjust left position for better centering on smaller screens */
+    }
+
+    .form-container {
+      max-width: 80%; /* Reduce the form width for better fit on smaller screens */
+      padding: 5px; /* Reduce padding for better spacing on smaller screens */
+    }
+
+    .form-container input[type="text"],
+    .form-container input[type="number"] {
+      padding: 10px; /* Reduce input field padding for better fit on smaller screens */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .form-popup {
+      top: 2%; /* Further adjust top position for smaller screens */
+      left: 5%; /* Further adjust left position for better centering on smaller screens */
+    }
+
+    .form-container {
+      max-width: 90%; /* Further reduce the form width for better fit on smaller screens */
+    }
+  }
+
+       </style>
+</head>
+<body>
+
+
+<style>
+  body
+{
+  background-color: #ecedee
+}
+.card{border: none;
+  overflow: hidden
+}
+.thumbnail_images ul
+{
+  list-style: none;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin-top:10px
+}
+.thumbnail_images ul li
+{
+  margin: 5px;
+  padding: 10px;
+  border: 2px solid #eee;
+  cursor: pointer;
+  transition: all 0.5s
+}
+.thumbnail_images ul li:hover
+{
+  border: 2px solid #000
+}
+.main_image
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  height: 400px;
+  width: 100%;
+  overflow: hidden
+}
+.heart
+{
+  height: 29px;
+  width: 29px;
+  background-color: #eaeaea;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+.content p
+{
+  font-size: 12px
+}
+.ratings span
+{
+  font-size: 14px;
+  margin-left: 12px
+}
+.colors
+{
+  margin-top: 5px
+}
+.colors ul
+{
+  list-style: none;
+  display: flex;
+  padding-left: 0px
+}
+.colors ul li
+{
+  height: 20px;
+  width: 20px;
+  display: flex;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer
+}
+.colors ul li:nth-child(1)
+{
+  background-color: #6c704d
+}
+.colors ul li:nth-child(2)
+{
+  background-color: #96918b
+}
+.colors ul li:nth-child(3)
+{
+  background-color: #68778e
+}
+.colors ul li:nth-child(4)
+{
+  background-color: #263f55
+}
+.colors ul li:nth-child(5)
+{
+  background-color: black
+}
+.right-side{position: relative
+}
+.search-option
+{
+  position: absolute;
+  background-color: #000;
+  overflow: hidden;
+  align-items: center;
+  color: #fff;
+  width: 200px;
+  height: 200px;
+  border-radius: 49% 51% 50% 50% / 68% 69% 31% 32%;
+  left: 30%;
+  bottom: -250px;
+  transition: all 0.5s;
+  cursor: pointer
+}
+.search-option .first-search
+  {
+    position: absolute;
+    top: 20px;
+    left: 90px;
+    font-size: 20px;
+    opacity: 1000
+  }
+  .search-option .inputs
+  {
+    opacity: 0;
+    transition: all 0.5s ease;
+    transition-delay: 0.5s;
+    position: relative
+  }
+  .search-option .inputs input
+  {
+    position: absolute;
+    top: 200px;
+    left: 30px;
+    padding-left: 20px;
+    background-color: transparent;
+    width: 300px;
+    border: none;
+    color: #fff;
+    border-bottom: 1px solid #eee;
+    transition: all 0.5s;
+    z-index: 10}.search-option .inputs input:focus
+    {
+      box-shadow: none;
+      outline: none;
+      z-index: 10
+    }
+    .search-option:hover
+    {
+      border-radius: 0px;
+      width: 100%;
+      left: 0px
+    }
+    .search-option:hover .inputs
+    {
+      opacity: 1
+    }
+    .search-option:hover .first-search
+    {
+      left: 27px;
+      top: 25px;
+      font-size: 15px
+    }
+    .search-option:hover .inputs input
+    {
+      top: 20px
+    }
+    .search-option .share
+    {
+      position: absolute;
+      right: 20px;
+      top: 22px
+    }
+    .buttons .btn
+    {
+      height: 50px;
+      width: 150px;
+      border-radius: 0px !important
+    }
+      </style>
+<!-- nav bar start -->
+</nav>
+    <nav class="navbar navbar-expand-md" id="navbar-color">
+        <!-- Brand -->
+        <div class="container">
+        <a class="navbar-brand" href="../../index.html" id="navbar-logo"><i><img src="shop.png" alt=""></i>ASLIMART <!--<h5>Apna Cart</h5>--></a>
+                
+      
+        <!-- Toggler/collapsibe Button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span><i><img src="menu.png" alt="" width="30px"></i></span>
+        </button>
+      
+        <!-- Navbar links -->
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="../../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../index.html">> Categories</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Electronics.html">> Electronics</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="ep1.html">> Aslimart Product</a>
+            </li>
+          </ul>
+        </div>
+        
+        <!--<div class="new-icons">
+          <i class='bx bxs-cart' style="font-size: 20px;"></i>
+          <i class='bx bxs-heart' style="font-size: 20px;"></i>
+          <i class='bx bxs-user' style="font-size: 20px;"></i>
+        </div>-->
+      </div>
+      </nav>
+
+      <!-- Nav bar end  -->
+    <div class="container mt-4 mb-4">	
+  <div class="card">	
+    <div class="row g-0">	
+      <div class="col-md-6 border-end">	
+        <div class="d-flex flex-column justify-content-center">	
+          <div class="main_image">	
+            <img src="pproduct1.png" id="main_product_image" width="350">	
+          </div>	
+          <div class="thumbnail_images">	
+            <ul id="thumbnail">	
+              <li><img onclick="changeImage(this)" src="pproduct1.png" width="70"></li>	
+              <li><img onclick="changeImage(this)" src="pproduct1.png" width="70"></li>	
+              <li><img onclick="changeImage(this)" src="pproduct1.png" width="70"></li>	
+              <li><img onclick="changeImage(this)" src="pproduct1.png" width="70"></li>	
+            </ul>	
+          </div>	
+        </div>	
+      </div>	
+      <div class="col-md-6">	
+        <div class="p-3 right-side">
+          <h6>Produt ID : AMI123456</h6>	<br>
+          <div class="d-flex justify-content-between align-items-center">	
+            <h4>Aslimart Product</h4>	
+            <!-- <span class="heart"><i class='bx bx-heart'></i></span>	 -->
+          </div>
+
+          <h3>₹ 99.99</h3>
+          <div class="container mt-4 mb-4">	
+          <h5>Description</h5>
+          <p>Des - 1 <br>
+            Des - 2<br>
+            Des - 3<br>
+          </p>	
+          <!-- <h5>Note : </h5>
+          <li> We will no longer be accepting Cash on Delivery (COD) orders.</li>
+          <li> Once the order is placed successfully, our representative will contact you on payment process.</li>
+          <li>Thank you for your kind cooperation.</li> -->
+                    </div>	
+                  <div class = "buttons d-flex flex-row mt-3 gap-3">
+                  <button type = "button" class = "btn btn-outline-dark" onclick="openForm()"><i class = "fas fa-shopping-cart"></i> Order now</button>
+                  <!-- <button type = "button" class = "btn btn-outline-dark" onclick="openForm()"><i class = "fas fa-phone-alt"></i> Call us</button> -->
+                  <button type = "button" class = "btn btn-outline-dark" onclick="location.href='https://wa.me/qr/X7SBT76XCACNM1'"><i class = "fas fa-comment"></i> Whatsapp Us</button>
+                  </div> <br>
+                  <h5>Note : </h5>
+          <li> We will no longer be accepting Cash on Delivery (COD) orders.</li>
+          <li> Once the order is placed successfully, our representative will contact you on payment process.</li>
+          <li>Thank you for your kind cooperation.</li>
+            </div>	
+        </div>	
+      </div>	
+    </div> 
+  </div>
+
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div id="contact" class="col-lg-3 col-md-6 footer-contact">
+            <h3>Contact Us</h3>
+            <p>
+              <strong>Phone:</strong> +91 9542464814<br>
+              <strong>Email:</strong> Support@aslimart.co.in<br>
+            </p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="../../index.html">Home</a></li>
+              
+              <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
+                            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Make Money With Us</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="../../Affiliate Page/Affiliate.html">Affiliate Programme</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Sell Your Products With Us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Advertise Your Products With Us</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Social Networks</h4>
+            <div class="social-links mt-3">
+              <a href="https://www.facebook.com/profile.php?id=100089201185477" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="https://www.instagram.com/aslimart_india/" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="https://www.youtube.com/channel/UCSDh82WOWoesXu3v6fIC7IQ" class="youtube"><i class="bx bxl-youtube"></i></a>
+              <a href="https://chat.whatsapp.com/J1tDZ18rskx4Erc7O88rJ3" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
+              <a href="https://t.me/+daOUiKOPHexiNjc1" class="telegram"><i class="bx bxl-telegram"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container py-4">
+      <div class="copyright">
+        &copy; Copyright <strong><span>ASLIMART</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        Designed by <a href="https://vasilogicalsolutions.in/">Vasilogicalsolutions</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src = "script.js"></script>
+
+    <script>
+        
+        const section = document.querySelector("section"),
+          overlay = document.querySelector(".overlay"),
+          showBtn = document.querySelector(".show-modal"),
+          closeBtn = document.querySelector(".close-btn");
+  
+        showBtn.addEventListener("click", () => section.classList.add("active"));
+  
+        overlay.addEventListener("click", () =>
+          section.classList.remove("active")
+        );
+  
+        closeBtn.addEventListener("click", () =>
+          section.classList.remove("active")
+        );
+      </script>
+
+<div class="form-popup" id="myForm">
+  <form action="https://sheetdb.io/api/v1/lio12aabpux0u"class="form-container" method = "POST" id = "sheetdb-form">
+    <h2 class = "contact-heading"> Delivery Address</h2>
+
+    <label for="product"><b>Product ID (ID can be found on product page -> Produt ID : AMI123456)</b></label>
+    <input type="text" placeholder="Enter product ID (eg : AMI123456) " name="product" required>
+
+    <label for="qty"><b>Order Quantity</b></label>
+    <input type="number" placeholder="Enter required quantity" name="qty" required>
+
+    <label for="email"><b>Full Name</b></label>
+    <input type="text" placeholder="Enter  Name" name="name" required>
+
+    <label for="email"><b>Email</b></label>
+    <!-- <h4>Support@aslimart.co.in</h4> -->
+    <input type="text" placeholder="Enter Email" name="email" required>
+
+    <label for="phone"><b>Mobile No</b></label>
+    <!-- <h4>+91 9542464814</h4> -->
+    
+    <input type="number" placeholder="Enter Contact Number" name="phone" required>
+
+    <label for="address"><b>Delivery Address</b></label>
+    <input type="text" placeholder="Enter Delivery Address" name="address" required>
+
+    <label for="pincode"><b>Pincode</b></label>
+    <input type="number" placeholder="Enter Pincode" name="pincode" required>
+
+    <label for="code"><b>AMI CODE</b></label>
+    <input type="text" placeholder="Enter AMI code" name="code" required>
+    <!-- <input type="checkbox"  name="tick1" class = "tick" required>
+    <label for="updates">I agree for terms and conditions</label>-->
+    <h5>NOTE</h5>
+    <h6><li> We will no longer be accepting Cash on Delivery (COD) orders.</li></h6>
+    <h6><li>Once the order is placed successfully, our representative will contact you on payment process.</li></h6>
+    <h6><li>Thank you for your kind cooperation.</li></h6> <br>
+
+
+    <button type="submit" class="btn">Submit</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+<div class="thank-you-popup" id="thankYouPopup">
+  
+  <h3>Thank You for shopping with us</h3> <br>
+  <p>Our representative will contact you on order confirmation & payment process.</p>
+  <!-- <p>Contact Number : +91 9542464814</p>
+  <p>E-Mail-Id : Support@aslimart.co.in</p> -->
+  
+  <button type="button" class="btn" onclick="location.href='ep1.html'">Close</button>
+
+</div>
+
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+  
+
+}
+
+function closePopup(){
+  document.getElementById("thankYouPopup").style.display = "none";
+}
+</script>
+<script>
+  var form = document.getElementById("sheetdb-form");
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    fetch(form.action, {
+        method : "POST",
+        body: new FormData(document.getElementById("sheetdb-form")),
+    }).then(
+        response => response.json()
+    ).then((html) => {
+      document.getElementById("sheetdb-form").reset();
+      
+    });
+  });
+</script>
+
+<script>
+  function showThankYouPopup() {
+  document.getElementById("thankYouPopup").style.display = "block";
+  closeForm();
+}
+
+  document.getElementById("sheetdb-form").addEventListener("submit", function(event) {
+  event.preventDefault();
+  
+  showThankYouPopup();
+});
+</script>
+
+
+<script>
+  function changeImage(element) {
+
+var main_prodcut_image = document.getElementById('main_product_image');
+main_prodcut_image.src = element.src;
+
+
+}
+</script>
+
+
+</body>
+</html>

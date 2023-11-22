@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Text to Popup Input</title>
+  <style>
+    /* Styles for the overlay background */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Styles for the popup */
+    .popup {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+
+<!-- Sample HTML content -->
+<div id="htmlContent">
+  <h1>This is an example HTML content</h1>
+  <p>You can extract this text and display it in a popup input field.</p>
+</div>
+
+<!-- Trigger button to show the popup -->
+<button onclick="showPopup()">Show Popup</button>
+
+<!-- The overlay and popup container -->
+<div id="overlay" class="overlay">
+  <div id="popup" class="popup">
+    <label for="inputField">Extracted Text:</label>
+    <input type="text" id="inputField" readonly>
+    <button onclick="hidePopup()">Close</button>
+  </div>
+</div>
+
+<script>
+  function showPopup() {
+    // Extract text from HTML content
+    var htmlContent = document.getElementById('htmlContent').innerText;
+    
+    // Display the overlay and set the extracted text in the input field
+    document.getElementById('overlay').style.display = 'flex';
+    document.getElementById('inputField').value = htmlContent;
+  }
+
+  function hidePopup() {
+    // Hide the overlay
+    document.getElementById('overlay').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>

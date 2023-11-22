@@ -4,8 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aslimart Product</title>
+    <title>Electronic Product</title>
     <link rel="stylesheet" href="../../CSS files/style.css">
+
+    <!-- calc link -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- calc link end  -->
     <link rel="stylesheet" href="main.js">
     <!-- bootstrap link -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -46,27 +52,27 @@
           position: fixed;
           bottom: 0;
           border: 3px solid #f1f1f1;
-         z-index: 9;
-         top:50%;
-         left: 35.1%;
-         text-align: center;
-         height: 225px;
-         background-color: white;
-         padding: 20px; /* Increased padding for space inside the popup */
-         margin: -100px 0 0 -150px;
+          z-index: 9;
+          top:50%;
+          left: 35.1%;
+          text-align: center;
+          height: 279px;
+          background-color: white;
+          padding: 20px; /* Increased padding for space inside the popup */
+          margin: -100px 0 0 -150px;
         
         }
         
         .thank-you-popup .btn {
-         background-color: #04AA6D;
-         color: rgb(252, 253, 253);
-         padding: 5px 10px;
-         border: none;
-         cursor: pointer;
+          background-color: #04AA6D;
+          color: rgb(252, 253, 253);
+          padding: 5px 10px;
+          border: none;
+          cursor: pointer;
 
        }
        .thank-you-popup p, h{
-        padding-bottom: 20px;
+         padding-bottom: 20px;
        }
        .open-button {
          background-color: #555;
@@ -88,9 +94,9 @@
          bottom: 10;
          border: 3px solid #f1f1f1;
          z-index: 9;
-         top:13%;
+         top:4%;
          left: 25%;
-         height: 459px;
+         height: 594px;
          overflow: scroll
          
        }
@@ -98,12 +104,15 @@
        /* Add styles to the form container */
        .form-container {
          max-width: 600px;
-         padding: 10px;
+         padding: 27px;
          background-color: white;
        }
        
        /* Full-width input fields */
-       .form-container input[type=text], .form-container input[type=number] {
+       .form-container input[type=text], 
+       .form-container input[type=number],
+       .form-container input[type=tel], 
+       .form-container input[type=email]{
          width: 100%;
          padding: 15px;
          margin: 5px 0 22px 0;
@@ -112,7 +121,10 @@
        }
        
        /* When the inputs get focus, do something */
-       .form-container input[type=text]:focus, .form-container input[type=number]:focus {
+       .form-container input[type=text]:focus, 
+       .form-container input[type=tel]:focus, 
+       .form-container input[type=number]:focus,
+       .form-container input[type=email]:focus {
          background-color: #ddd;
          outline:none;
        }
@@ -142,29 +154,31 @@
        /* Responsive styles for tablets and mobiles */
   @media (max-width: 768px) {
     .form-popup {
-      top: 10%; /* Adjust top position for better visibility on smaller screens */
-      left: 10%; /* Adjust left position for better centering on smaller screens */
+      top: 20%; /* Adjust top position for better visibility on smaller screens */
+      left: 9%; /* Adjust left position for better centering on smaller screens */
     }
 
     .form-container {
       max-width: 80%; /* Reduce the form width for better fit on smaller screens */
-      padding: 5px; /* Reduce padding for better spacing on smaller screens */
+      padding: 27px; /* Reduce padding for better spacing on smaller screens */
     }
 
     .form-container input[type="text"],
-    .form-container input[type="number"] {
-      padding: 10px; /* Reduce input field padding for better fit on smaller screens */
+    .form-container input[type="number"],
+    .form-container input[type="tel"],
+    .form-container input[type="email"], {
+      padding: 9px; /* Reduce input field padding for better fit on smaller screens */
     }
   }
 
   @media (max-width: 480px) {
     .form-popup {
-      top: 2%; /* Further adjust top position for smaller screens */
-      left: 5%; /* Further adjust left position for better centering on smaller screens */
+      top: 6%; /* Further adjust top position for smaller screens */
+      left: 2%; /* Further adjust left position for better centering on smaller screens */
     }
 
     .form-container {
-      max-width: 90%; /* Further reduce the form width for better fit on smaller screens */
+      max-width: 99%; /* Further reduce the form width for better fit on smaller screens */
     }
   }
 
@@ -351,6 +365,18 @@
       width: 150px;
       border-radius: 0px !important
     }
+    /* Style for the shipping text */
+.shipping-text {
+  font-size: medium; /* You can adjust the size as needed (smaller or larger) */
+}
+
+/* Style for the small input box */
+.small-input {
+  font-size: small;
+  width: 69px; /* You can adjust the size as needed */
+}
+
+
       </style>
 <!-- nav bar start -->
 </nav>
@@ -378,7 +404,7 @@
               <a class="nav-link" href="Electronics.html">> Electronics</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="ep1.html">> Aslimart Product</a>
+              <a class="nav-link" href="ep1.html">> Electronic Product</a>
             </li>
           </ul>
         </div>
@@ -395,50 +421,49 @@
     <div class="container mt-4 mb-4">	
   <div class="card">	
     <div class="row g-0">	
-      <div class="col-md-6 border-end">	
+      <div class="col-md-5 border-end">	
         <div class="d-flex flex-column justify-content-center">	
           <div class="main_image">	
-            <img src="pproduct1.png" id="main_product_image" width="350">	
+            <img src="../../p1.png" id="main_product_image" width="360">	
           </div>	
           <div class="thumbnail_images">	
             <ul id="thumbnail">	
-              <li><img onclick="changeImage(this)" src="pproduct1.png" width="70"></li>	
-              <li><img onclick="changeImage(this)" src="pproduct1.png" width="70"></li>	
-              <li><img onclick="changeImage(this)" src="pproduct1.png" width="70"></li>	
-              <li><img onclick="changeImage(this)" src="pproduct1.png" width="70"></li>	
+              <li><img onclick="changeImage(this)" src="../../p1.png" width="49"></li>	
+              <li><img onclick="changeImage(this)" src="../../p2.png" width="49"></li>	
+              <li><img onclick="changeImage(this)" src="../../p33.png" width="49"></li>	
+              <li><img onclick="changeImage(this)" src="../../p4.png" width="49"></li>	
             </ul>	
           </div>	
         </div>	
       </div>	
       <div class="col-md-6">	
         <div class="p-3 right-side">
-          <h6>Produt ID : AMI123456</h6>	<br>
+          <p> Produt ID : <span id="originalText">AMI123456</span></p><br>
           <div class="d-flex justify-content-between align-items-center">	
-            <h4>Aslimart Product</h4>	
+            <h5><b>Electronic Product</b></h5>	
             <!-- <span class="heart"><i class='bx bx-heart'></i></span>	 -->
           </div>
+          <h4>₹ <span id="price">10.00 </span> <span class="shipping-text"><b>+69rs</b> Shipping Charges</span></h4>
 
-          <h3>₹ 99.99</h3>
+      <!-- <div class="form-group"> -->
+        
+        
+      <!-- </div> -->
+      
           <div class="container mt-4 mb-4">	
-          <h5>Description</h5>
+          <h6><b>Description</b></h6>
           <p>Des - 1 <br>
             Des - 2<br>
             Des - 3<br>
-          </p>	
-          <!-- <h5>Note : </h5>
-          <li> We will no longer be accepting Cash on Delivery (COD) orders.</li>
-          <li> Once the order is placed successfully, our representative will contact you on payment process.</li>
-          <li>Thank you for your kind cooperation.</li> -->
-                    </div>	
-                  <div class = "buttons d-flex flex-row mt-3 gap-3">
-                  <button type = "button" class = "btn btn-outline-dark" onclick="openForm()"><i class = "fas fa-shopping-cart"></i> Order now</button>
-                  <!-- <button type = "button" class = "btn btn-outline-dark" onclick="openForm()"><i class = "fas fa-phone-alt"></i> Call us</button> -->
-                  <button type = "button" class = "btn btn-outline-dark" onclick="location.href='https://wa.me/qr/X7SBT76XCACNM1'"><i class = "fas fa-comment"></i> Whatsapp Us</button>
-                  </div> <br>
-                  <h5>Note : </h5>
-          <li> We will no longer be accepting Cash on Delivery (COD) orders.</li>
-          <li> Once the order is placed successfully, our representative will contact you on payment process.</li>
-          <li>Thank you for your kind cooperation.</li>
+          </p>
+          </div>
+          Qty: <label for="quantity"><input type="number" class="form-control small-input" id="quantity" placeholder="Enter quantity" min="1" max="9"></label>   Total Price: <b>₹<span id="totalPrice">0.00</span></b>
+          <!-- <label for="quantity"><input type="number" class="form-control" id="quantity" placeholder="Enter quantity"></label> Total Price: ₹<span id="totalPrice">0.00</span> -->
+          <div class = "buttons d-flex flex-row mt-3 gap-3">
+          <button type = "button" class = "btn btn-outline-dark" onclick="openForm()"><i class = "fas fa-shopping-cart"></i> Order now</button>
+          </div> <br>
+          <h5>Note : </h5>
+          <li> We will no longer be accepting Cash on Delivery (COD) orders. Thank you for your kind cooperation.</li>
             </div>	
         </div>	
       </div>	
@@ -463,9 +488,8 @@
             <h4>Useful Links</h4>
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="../../index.html">Home</a></li>
-              
               <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
-                            <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
             </ul>
           </div>
 
@@ -484,22 +508,18 @@
               <a href="https://www.facebook.com/profile.php?id=100089201185477" class="facebook"><i class="bx bxl-facebook"></i></a>
               <a href="https://www.instagram.com/aslimart_india/" class="instagram"><i class="bx bxl-instagram"></i></a>
               <a href="https://www.youtube.com/channel/UCSDh82WOWoesXu3v6fIC7IQ" class="youtube"><i class="bx bxl-youtube"></i></a>
-              <a href="https://chat.whatsapp.com/J1tDZ18rskx4Erc7O88rJ3" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
-              <a href="https://t.me/+daOUiKOPHexiNjc1" class="telegram"><i class="bx bxl-telegram"></i></a>
+              <a href="https://chat.whatsapp.com/CXY3JRdm2A5L3IzZyURbjr" class="whatsapp"><i class="bx bxl-whatsapp"></i></a>
+              <a href="https://t.me/aslimartindia" class="telegram"><i class="bx bxl-telegram"></i></a>
             </div>
           </div>
-
         </div>
       </div>
     </div>
 
     <div class="container py-4">
-      <div class="copyright">
-        &copy; Copyright <strong><span>ASLIMART</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        Designed by <a href="https://vasilogicalsolutions.in/">Vasilogicalsolutions</a>
-      </div>
+        <div class="copyright">
+          Copyright &copy; 2023  <strong><span>ASLIMART </span></strong>. All Rights Reserved.
+        </div>
     </div>
   </footer>
 
@@ -524,58 +544,55 @@
       </script>
 
 <div class="form-popup" id="myForm">
-  <form action="https://sheetdb.io/api/v1/lio12aabpux0u"class="form-container" method = "POST" id = "sheetdb-form">
-    <h2 class = "contact-heading"> Delivery Address</h2>
+  <form action="https://sheetdb.io/api/v1/tca75y015p9ze"class="form-container" method = "POST" id = "sheetdb-form">
+    <h2 class = "contact-heading">Checkout Form</h2>
 
-    <label for="product"><b>Product ID (ID can be found on product page -> Produt ID : AMI123456)</b></label>
-    <input type="text" placeholder="Enter product ID (eg : AMI123456) " name="product" required>
+    <label for="name"><b>Full Name</b></label>
+    <input type="text" placeholder="Enter Name" name="name" required pattern="[a-zA-Z\s]+" title="Please enter a valid name (only letters and spaces)">
 
-    <label for="qty"><b>Order Quantity</b></label>
-    <input type="number" placeholder="Enter required quantity" name="qty" required>
+    <label for="email"><b>Email</b></label><br>
+    <input type="email" placeholder="Enter Email" name="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" title="Please enter a valid email id"><br>
 
-    <label for="email"><b>Full Name</b></label>
-    <input type="text" placeholder="Enter  Name" name="name" required>
-
-    <label for="email"><b>Email</b></label>
-    <!-- <h4>Support@aslimart.co.in</h4> -->
-    <input type="text" placeholder="Enter Email" name="email" required>
-
-    <label for="phone"><b>Mobile No</b></label>
-    <!-- <h4>+91 7829278786</h4> -->
-    
-    <input type="number" placeholder="Enter Contact Number" name="phone" required>
+    <label for="phone"><b>Mobile No</b></label><br>
+    <input type="tel" placeholder="Enter Contact Number" name="phone" required pattern="[0-9]{10}" title="Please enter a valid number"><br>
 
     <label for="address"><b>Delivery Address</b></label>
-    <input type="text" placeholder="Enter Delivery Address" name="address" required>
+    <input type="text" placeholder="Enter Delivery Address" name="address" required pattern=".{27,}" title="Please enter a valid address">
 
     <label for="pincode"><b>Pincode</b></label>
-    <input type="number" placeholder="Enter Pincode" name="pincode" required>
+    <input type="text" placeholder="Enter Pincode" name="pincode" required pattern="[0-9]{6}" title="Please enter a valid 6-digit pincode">
 
     <label for="code"><b>AMI CODE</b></label>
-    <input type="text" placeholder="Enter AMI code" name="code" required>
-    <!-- <input type="checkbox"  name="tick1" class = "tick" required>
-    <label for="updates">I agree for terms and conditions</label>-->
+    <input type="text" placeholder="Enter AMI code" name="code" required pattern="[A-Za-z]{3}[0-9]{6}" title="Please enter a valid AMI code: 3 letters followed by 6 numbers">
+    
+    
+    <label for="product"> Product ID </label> <input type="checkbox" value="ok" onclick="passTextToForm()"> 
+    <input type="text" placeholder="Please tick the Product ID " id="textInput" name="product" >
+
+    <label for="tprice"> Total Amount </label> <input type="checkbox" value="submit" onclick="passtotalToForm()"> <br>
+    
+    <label for="Scanpay"><b>Click on QR Scanner for Payment</b></label><br>
+    <input type="text" placeholder="Please tick the Total Amount" id="textIput" name="tprice">
+    <a href="upi://pay?pa=aslambasha.8786@ybl&pn=Aslam&mc=0000&mode=02&purpose=00"><img id="previewImage" src="../../scanner.jpeg" alt="Preview Image" style="max-width: 300px; max-height: 300px;"></a><br>
+    <p>Once the Payment is done successfully, Please share the transaction details below</p>
+
+    <label for="transid"><b>Transaction ID</b></label>
+    <input type="text" placeholder="Enter UPI reference or Transaction reference ID" name="transid" required pattern="[0-9]{12,27}" title="Please enter a valid Transaction ID">
+
     <h5>NOTE</h5>
-    <h6><li> We will no longer be accepting Cash on Delivery (COD) orders.</li></h6>
-    <h6><li>Once the order is placed successfully, our representative will contact you on payment process.</li></h6>
-    <h6><li>Thank you for your kind cooperation.</li></h6> <br>
-
-
+    <h6><li><b> We will no longer be accepting Cash on Delivery (COD) orders, <br>  Thank you for your kind cooperation.</b></li></h6><br>
+    
     <button type="submit" class="btn">Submit</button>
     <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
   </form>
 </div>
+
 <div class="thank-you-popup" id="thankYouPopup">
-  
-  <h3>Thank You for shopping with us</h3> <br>
-  <p>Our representative will contact you on order confirmation & payment process.</p>
-  <!-- <p>Contact Number : +91 9542464814</p>
-  <p>E-Mail-Id : Support@aslimart.co.in</p> -->
-  
-  <button type="button" class="btn" onclick="location.href='../../payment.html'">Close</button>
-
+  <h3>Thank You for <b>shopping with us</b></h3> <br>
+  <p>Order Confirmation & Delivery details will be shared to your <b>Email id & Whatsapp</b> </p>
+  <p>Happy Shopping & Visit Again</p>
+  <button type="button" class="btn" onclick="location.href='ep1.html'">Close</button>
 </div>
-
 
 <script>
 function openForm() {
@@ -591,6 +608,28 @@ function closeForm() {
 function closePopup(){
   document.getElementById("thankYouPopup").style.display = "none";
 }
+
+// input field 
+function passTextToForm() {
+  var originalText = document.getElementById("originalText").innerText;
+  document.getElementById("textInput").value = originalText;
+
+}
+
+function passtotalToForm() {
+  var totalPrice = document.getElementById("totalPrice").innerText;
+  document.getElementById("textIput").value = totalPrice;
+
+}
+
+function passqToForm() {
+  var quantity = document.getElementById("quantity").innerText;
+  document.getElementById("textIqty").value = quantity;
+
+}
+
+// input field end
+
 </script>
 <script>
   var form = document.getElementById("sheetdb-form");
@@ -632,6 +671,18 @@ main_prodcut_image.src = element.src;
 }
 </script>
 
+<script>
+
+  document.getElementById('quantity').addEventListener('input', function() {
+    let price = parseFloat(document.getElementById('price').innerText);
+    let quantity = parseFloat(document.getElementById('quantity').value);
+    let totalPrice = (price * quantity) + 69;
+    
+    document.getElementById('totalPrice').innerText = totalPrice.toFixed(2);
+  });
+  
+  
+  </script>
 
 </body>
 </html>

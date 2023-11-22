@@ -537,3 +537,29 @@ html{
     line-height: 50px;
 
 }
+
+/* affiliate css starts */
+
+/* Reset some default styles */
+body, h1 {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style for the affiliate section */
+.affiliate-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 99px; /* Adjust the height as needed */
+  text-align: center;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+  .affiliate-section {
+    height: auto; /* Adjust the height as needed for smaller screens */
+    padding: 20px; /* Add padding to provide space around the content */
+  }
+}
+/* affilate css ends */
